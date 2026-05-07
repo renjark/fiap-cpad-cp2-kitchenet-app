@@ -71,7 +71,7 @@ Escaneie o QR Code com o Expo Go ou execute no emulador com a opção `a` (Andro
 
 ## DEMONSTRAÇÃO VISUAL
 
-xxx
+<img src="https://github.com/user-attachments/assets/1526e340-a4c9-4e4f-b17c-3ed01bcf3fe7" width="320" height="680" alt="gravacao-cp2">
 
 ---
 
@@ -144,46 +144,11 @@ O componente `RouteGuard` no `app/_layout.jsx` monitora `user` e `segments` com 
 
 ---
 
-## DIFERENCIAL IMPLEMENTADO
-
-**Diferencial #6 — Busca e filtragem em tempo real**
-
-### Por que foi escolhido?
-
-O problema central do app é ajudar alunos a encontrar rapidamente o que procuram. Uma busca com filtragem instantânea resolve isso diretamente: o aluno digita "coxinha" ou toca no filtro "5° andar" e vê o resultado imediatamente, sem precisar apertar "buscar".
-
-### O que agrega?
-
-- Experiência fluida sem recarregamentos
-- Combinação de texto livre + filtro por categoria simultaneamente
-- Botão de limpar busca (X) para resetar rapidamente
-- Estado vazio customizado quando nada é encontrado
-
-### Como foi implementado?
-
-Na tela `pesquisa.jsx`, os dados são filtrados via `useMemo` que roda sempre que `query` ou `categoria` mudam — sem chamadas extras, direto na memória. A lista é renderizada com `FlatList` para performance.
-
-```jsx
-const results = useMemo(() => {
-  let filtered = ITEMS;
-  if (categoria !== 'Todos') {
-    filtered = filtered.filter((i) => i.categories.includes(categoria));
-  }
-  if (query.trim()) {
-    filtered = filtered.filter((i) =>
-      i.name.toLowerCase().includes(query.trim().toLowerCase())
-    );
-  }
-  return filtered;
-}, [query, categoria]);
-```
-
----
-
 ## PRÓXIMOS PASSOS
 
 - Integração com API real da cantina para cardápio atualizado em tempo real
 - Notificações locais com Expo Notifications para lembrar o horário do almoço
+
 - Upload de foto de perfil com Expo ImagePicker
 - Histórico de pedidos por usuário
 - Avaliação de itens com estrelas
