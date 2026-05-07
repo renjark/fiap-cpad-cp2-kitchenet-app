@@ -51,6 +51,7 @@ Laís Krajner Lacerda, RM563182
 
 ### ⤷ Passo a passo:
 
+Abra o git bash e siga o passo a passo
 ```bash
 # Clone o repositório
 git clone https://github.com/renjark/fiap-cpad-cp2-kitchenet-app.git
@@ -58,6 +59,11 @@ git clone https://github.com/renjark/fiap-cpad-cp2-kitchenet-app.git
 # Acesse a pasta
 cd fiap-cpad-cp2-kitchenet-app/kitchenet-app
 
+# Abra no VS code
+code .
+```
+Agora, use os comandos a seguir dentro do VS code?
+```bash
 # Instale as dependências
 npm install
 
